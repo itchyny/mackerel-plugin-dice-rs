@@ -1,8 +1,8 @@
 extern crate mackerel_plugin;
 extern crate rand;
 
-use std::collections::HashMap;
 use mackerel_plugin::*;
+use std::collections::HashMap;
 
 pub struct DicePlugin {}
 
@@ -21,16 +21,14 @@ impl Plugin for DicePlugin {
     }
 
     fn graph_definition(&self) -> Vec<Graph> {
-        vec![
-            graph! {
-                name: "dice",
-                label: "My Dice",
-                unit: "integer",
-                metrics: [
-                    { name: "d6", label: "Die 6" },
-                    { name: "d20", label: "Die 20" },
-                ]
-            },
-        ]
+        vec![graph! {
+            name: "dice",
+            label: "My Dice",
+            unit: "integer",
+            metrics: [
+                { name: "d6", label: "Die 6" },
+                { name: "d20", label: "Die 20" },
+            ]
+        }]
     }
 }
